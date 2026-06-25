@@ -9,3 +9,32 @@
 //     }
 // })
 
+let data = [
+    {
+        "id":"1",
+        "name": "Shivaji"
+    },
+    {
+        "id":"2",
+        "name": "Shiva"
+    },
+    {
+        "id":"3",
+        "name": "Mahesh"
+    },
+    {
+        "id":"4",
+        "name": "SS"
+    },
+    {
+        "id":"5",
+        "name": "Sheri"
+    }
+]
+
+let option = {
+    "method":"POST",
+    "header": {
+        "content-type":"application/json"
+    }
+}
