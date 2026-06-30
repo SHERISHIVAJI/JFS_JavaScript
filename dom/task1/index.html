@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM First Task</title>
+</head>
+<body>
+    <script>
+        // Question - 1
+        let ul = document.createElement("ul")
+        for(i = 0; i < 5; i++) {
+            let li = document.createElement("li")
+            li.innerText = prompt(`Enter input text for li ${i + 1}`)
+            ul.append(li)
+        }
+        document.body.append(ul)
+
+        // Question - 2
+        let para = document.createElement("p")
+        para.innerText = prompt("Type any paragraph")
+        let div = document.createElement("div")
+        div.append(para)
+        document.body.append(div)
+
+        // Question - 3
+        let h1 = document.createElement("h1")
+        h1.innerText = prompt("Enter Heading : ")
+
+        let p = document.createElement("p")
+        p.innerText = prompt("Enter Paragraph : ")
+
+        let div1 = document.createElement("div")
+        div1.append(h1)
+        div1.append(p)
+        document.body.append(div1)
+
+        // Question - 4
+        let tr = document.createElement("tr")
+        for(i = 0; i < 3; i++) {
+            let td = document.createElement("td")
+            td.innerText = prompt(`Enter data for td${i+1} : `)
+            tr.append(td)
+        }
+        let table = document.createElement("table")
+        table.append(tr)
+        document.body.append(table)
+
+        // document.body.append(document.createElement("br"))
+        // Question - 5
+        let div2 = document.createElement("div")
+        for(i = 0; i < 5; i++) {
+            let btn = document.createElement("button")
+            btn.innerText = prompt(`Enter Button ${i +1} Name : `)
+            div.append(btn)
+        }
+        document.body.append(div2)
+    </script>
+</body>
+</html>
