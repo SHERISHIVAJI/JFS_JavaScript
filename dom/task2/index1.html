@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: green;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let data = [
+            {
+                "id":"1",
+                "name":"Shivaji"
+            },
+            {
+                "id":"2",
+                "name":"Shiva"
+            },
+            {
+                "id":"3",
+                "name":"Ramu"
+            },
+            {
+                "id":"4",
+                "name":"Shankar"
+            },
+            {
+                "id":"5",
+                "name":"Shivaji"
+            }
+        ]
+
+        let div = document.createElement("div")
+        data.forEach(ele => {
+            let p = document.createElement("p")
+            p.innerHTML = `Name is : ${ele.name}`
+            div.append(p)
+        })
+        document.body.append(div)
+    </script>
+</body>
+</html>
