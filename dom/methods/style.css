@@ -1,0 +1,13 @@
+td:last-child {
+    width: 400px;
+    height: 200px;
+}
+
+img {
+    max-width: 200px;
+    
+}
+table {
+    width: 100%;
+    text-align: center;
+}
