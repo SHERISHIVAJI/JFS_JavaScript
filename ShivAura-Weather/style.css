@@ -1,0 +1,393 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#000;
+}
+
+body{
+    display:flex;
+}
+
+.globe-section{
+    width:60%;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+    background:#000;
+}
+
+#globeViz{
+    width:100%;
+    height:100%;
+}
+
+.globe-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.35));
+    z-index:1;
+}
+
+.globe-overlay{
+    position:absolute;
+    top:40px;
+    left:40px;
+    z-index:5;
+    color:white;
+}
+
+.globe-overlay h1{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:12px;
+    letter-spacing:1px;
+}
+
+.globe-overlay p{
+    font-size:16px;
+    color:#ddd;
+    line-height:1.6;
+}
+
+.weather-section{
+    width:40%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+    padding:20px;
+}
+
+.weather-container{
+    width:100%;
+    max-width:360px;
+    max-height:95vh;
+    overflow-y:auto;
+    padding:22px;
+    border-radius:22px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow: 0 10px 35px rgba(0,0,0,.35);
+    color: white;
+}
+
+.weather-container::-webkit-scrollbar{
+    width:0;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.logo{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.weather-container h2{
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    font-size:14px;
+    color:#ddd;
+}
+
+.search-box{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.search-box input{
+    flex:1;
+    padding:12px 15px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    font-size:15px;
+    background: rgba(255,255,255,.12);
+    color:white;
+}
+
+.search-box input::placeholder{
+    color:#ddd;
+}
+
+.search-box button{
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background: linear-gradient( 45deg, #00c6ff, #0072ff);
+    color:white;
+    font-size:18px;
+    transition:.3s;
+    padding: 10px;
+}
+
+.search-box button:hover{
+    transform:translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,114,255,.4);
+}
+
+#loading{
+    display:none;
+    text-align:center;
+    margin:20px 0;
+}
+
+.loader{
+    width:45px;
+    height:45px;
+    margin:auto;
+    border-radius:50%;
+    border:5px solid rgba(255,255,255,.2);
+    border-top:5px solid #00c6ff;
+    animation:spin 1s linear infinite;
+}
+
+#loading p{
+    margin-top:12px;
+    color:#ddd;
+    font-size:14px;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+#weatherCard{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:15px;
+}
+
+.city{
+    grid-column:1/-1;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:15px;
+    padding:14px;
+    text-align:center;
+    transition:.3s;
+}
+
+.city:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,.14);
+}
+
+.city h2{
+    font-size:22px;
+    font-weight:600;
+}
+
+.temp{
+    grid-column:1/-1;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+    font-size:42px;
+    font-weight:700;
+    transition:.3s;
+    color: black;
+}
+
+.temp:hover{
+    transform:scale(1.02);
+}
+
+.box{
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:15px;
+    padding:14px;
+    text-align:center;
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.15);
+}
+
+.box h4{
+    font-size:13px;
+    color:#d8d8d8;
+    margin-bottom:6px;
+    font-weight:500;
+}
+
+.box h2{
+    font-size:18px;
+    font-weight:600;
+}
+
+.condition{
+    grid-column:1/-1;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    line-height:1.7;
+    transition:.3s;
+}
+
+.condition:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.condition h3{
+    font-size:18px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.city,
+.temp,
+.box,
+.condition{
+    animation:fadeUp .5s ease;
+}
+
+.weather-container #myProfile {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 10px;
+    background: linear-gradient( 45deg, #00c6ff, #0072ff);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#00c6ff;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+@media(max-width:1100px){
+    body{
+        flex-direction:column;
+        overflow:auto;
+    }
+    .globe-section{
+        width:100%;
+        height:45vh;
+    }
+    .weather-section{
+        width:100%;
+        height:auto;
+        padding:20px;
+    }
+    .weather-container{
+        max-width:430px;
+    }
+}
+
+@media(max-width:768px){
+    .globe-overlay{
+        top:25px;
+        left:25px;
+    }
+    .globe-overlay h1{
+        font-size:30px;
+    }
+    .globe-overlay p{
+        font-size:14px;
+    }
+    .weather-container{
+        max-width:350px;
+        padding:18px;
+    }
+    .logo{
+        font-size:42px;
+    }
+    .weather-container h2{
+        font-size:24px;
+    }
+    .search-box{
+        flex-direction:column;
+    }
+    .search-box button{
+        width:100%;
+        height:45px;
+    }
+    .temp{
+        font-size:36px;
+    }
+}
+
+@media(max-width:480px){
+    .globe-section{
+        height:38vh;
+    }
+    .weather-container{
+        width:95%;
+        max-width:330px;
+        padding:16px;
+    }
+    .city h2{
+        font-size:18px;
+    }
+    .temp{
+        font-size:32px;
+        padding:15px;
+    }
+    .box{
+        padding:12px;
+    }
+    .box h2{
+        font-size:16px;
+    }
+    .condition{
+        font-size:14px;
+    }
+}
