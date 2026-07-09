@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Conversion</title>
+    <style>
+        select {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Currency Conversion</h1>
+
+    <input type="number" name="amount" id="amount" value="1">
+
+    <br><br>
+    <label for="fromCurrency">From : </label><br>
+    <select name="fromCurrency" id="fromCurrency">
+        <option value="USD">USD</option>
+        <option value="INR">IND</option>
+        <option value="EUR">EUR</option>
+    </select>
+
+    <br><br>
+    <label for="toCurrency">To : </label><br>
+    <select name="toCurrency" id="toCurrency">
+        <option value="USD">USD</option>
+        <option value="INR">IND</option>
+        <option value="EUR">EUR</option>
+    </select>
+
+    <br><br>
+    <button onclick="convert()">Cunvert</button>
+    <div id="result"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
