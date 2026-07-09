@@ -54,8 +54,7 @@ async function convertCurrency(){
         `Exchange Rate : 1 ${fromCurrency.value} = ${data.info.rate.toFixed(6)} ${toCurrency.value}`;
         updatedTime.innerHTML=
         `Last Updated : ${data.date}`;
-    }
-    catch(error){
+    } catch(error) {
         loading.style.display="none";
         console.error(error);
         result.innerHTML="Conversion Failed!";

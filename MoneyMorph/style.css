@@ -96,7 +96,6 @@ select option{
 }
 
 .currency-group{
-
     display:flex;
     gap:15px;
     align-items:end;
@@ -104,12 +103,10 @@ select option{
 }
 
 .currency-box{
-
     flex:1;
 }
 
 #swapBtn{
-
     width:55px;
     height:55px;
     border:none;
