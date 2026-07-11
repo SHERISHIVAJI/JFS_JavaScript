@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+        }
+        #main #item {
+            border: 2px solid;
+            height: 200px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        #item button {
+            background-color: orange;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+
+        #edit {
+            padding: 20px;
+            border: 1px solid;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #edit input {
+            width: 50%;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        #edit input:focus {
+            border: none;
+        }
+
+        #edit button {
+            width: 150px;
+            padding: 10px 15px;
+            font-size: 20px;
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        
+    </div>
+    <div id="edit">
+        <input type="hidden" id="id">
+        <br><br>
+        <input type="text" placeholder="Enter Name" id="name">
+        <br><br>
+        <input type="text" placeholder="Enter Image Link" id="image">
+        <br><br>
+        <button onclick="saveData()">Save Edits</button>
+    </div>
+    <script src="./admin.js"></script>
+</body>
+</html>
