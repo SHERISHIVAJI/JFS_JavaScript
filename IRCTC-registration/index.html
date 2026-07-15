@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC Registration Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create Your IRCTC Account</h2>
+        <div class="signin">
+            Already Registered?
+            <a href="#">SIGN IN</a>
+        </div>
+
+        <div class="warning">
+            Garbage / Junk values in profile may lead to deactivation of IRCTC account.
+        </div>
+
+        <div class="note">
+            Opening Advance Reservation Period (ARP) ticket and Opening Tatkal ticket booking
+        for unauthenticated users is allowed only after 4 days from date of User Registration
+        (excluding the day of registration). User may authenticate their profile with Aadhaar.
+        </div>
+
+        <form id="registerForm">
+            <div class="input-group">
+                <label for="username">User Name *</label>
+                <input type="text" id="username" name="username">
+                <small></small>
+            </div>
+            <div class="input-group">
+                <label for="fullname">Full Name *</label>
+                <input type="text" id="fullname" name="fullname">
+                <small></small>
+            </div>
+            <div class="input-group">
+                <label for="password">Password *</label>
+                <input type="password" name="password" id="password">
+                <small></small>
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password *</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+                <small></small>
+            </div>
+            <div class="email-note">
+                Invalid email ID may lead to deactivation of IRCTC account.
+            </div>
+            <div class="input-group">
+                <label for="email">Email *</label>
+                <input type="email" name="email" id="email">
+                <small></small>
+            </div>
+            <div class="country">
+                +91 - India
+            </div>
+            <div class="mobile-note">
+                Please submit Mobile Number without ISD Code
+            </div>
+            <div class="input-group">
+                <label for="mobile">Mobile *</label>
+                <input type="text" id="mobile" name="mobile">
+                <small></small>
+            </div>
+            <div class="captcha-box">
+                <label for="captcha">Captcha</label>
+                <div class="captcha-area">
+                    <span id="captchaText"></span>
+                    <button type="button" onclick="generateCaptcha()">↻</button>
+                </div>
+                <input type="text" id="captchaInput" name="captchaInput" placeholder="Enter Captcha">
+                <small id="captchaError"></small>
+            </div>
+            <button type="submit">
+                Register
+            </button>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
